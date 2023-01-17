@@ -8,8 +8,8 @@ interface IProviderProps {
 interface ICalculateProps {
   amount: number
   installments: number
-  mds: number
-  days: Array<number>
+  mdr: number
+  days?: Array<number>
 }
 
 interface IContext {
@@ -24,9 +24,9 @@ type IResponseProps = {
 
 const defaultDays = [1, 15, 30, 90]
 const defaultDB = {
-  amount: 0,
-  installments: 0,
-  mds: 0,
+  amount: 1000,
+  installments: 1,
+  mdr: 1,
   days: defaultDays,
 }
 
@@ -39,17 +39,22 @@ export const Provider = ({ children }: IProviderProps) => {
     instance({ method: "POST", data: defaultDB })
       .then((res) => {
         const array = Object.keys(res.data).map((key, index) => {
-          return { day: key, value: Object.values(res.data)[index] }
+          return { day: key, value: 0 }
         })
         setResponse(array)
       })
-      .catch((err) => console.log(err))
+      .catch((err) => console.log(err.response.data))
   }, [])
 
   function calculate(data: ICalculateProps) {
     instance({ method: "POST", data: { ...data, days: defaultDays } })
-      .then((res) => setResponse(res.data))
-      .catch((err) => console.log(err))
+      .then((res) => {
+        const array = Object.keys(res.data).map((key, index) => {
+          return { day: key, value: Object.values(res.data)[index]}
+        })
+        setResponse(array)
+      })
+      .catch((err) => console.log(err.response))
   }
 
   return (
