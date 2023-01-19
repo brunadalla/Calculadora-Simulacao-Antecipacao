@@ -43,18 +43,18 @@ export const Provider = ({ children }: IProviderProps) => {
         })
         setResponse(array)
       })
-      .catch((err) => console.log(err.response.data))
+      .catch((err) => console.log(err))
   }, [])
 
   function calculate(data: ICalculateProps) {
     instance({ method: "POST", data: { ...data, days: defaultDays } })
       .then((res) => {
         const array = Object.keys(res.data).map((key, index) => {
-          return { day: key, value: Object.values(res.data)[index]}
+          return { day: key, value: Object.values(res.data)[index] }
         })
         setResponse(array)
       })
-      .catch((err) => console.log(err.response))
+      .catch((err) => console.log(err))
   }
 
   return (

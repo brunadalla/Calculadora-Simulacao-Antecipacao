@@ -1,6 +1,11 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle, css } from "styled-components"
+
+const SignikaNegative = css`
+  @import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;500;600;700&display=swap");
+`
 
 const GlobalStyle = createGlobalStyle`
+    ${SignikaNegative}
     
     :root {
         --gray-100: #f8f9fa;
@@ -10,6 +15,8 @@ const GlobalStyle = createGlobalStyle`
 
         --blue-100: #5fa8d3;
         --blue-300: #1b4965;
+
+        --red-400: #d90429
    
 };
 
@@ -19,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 0px;
         outline: unset;
 
+        font-family: 'Signika Negative', sans-serif;
         font-weight: 500;
         font-size: 1rem;
 

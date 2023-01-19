@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react"
+import 'animate.css';
 
 import { Context } from "../../contexts"
 import { HomeContainer } from "./styles"
@@ -14,18 +15,22 @@ const Home = () => {
   }, [response])
 
   return (
-    <HomeContainer>
+    <HomeContainer className="animate__animated animate__fadeIn">
       <main>
         <section id='section-form'>
-          <h1>Simule sua Antecipação</h1>
-          <Form />
+          <div id='div-form'>
+            <h1>Simule sua Antecipação</h1>
+            <Form />
+          </div>
         </section>
         <section id='section-results'>
-          <h3>VOCÊ RECEBERÁ:</h3>
-          <div>
-            {data.map((obj, index) => (
-              <Result day={obj.day} value={obj.value} key={index} />
-            ))}
+          <div id='div-results'>
+            <h3>VOCÊ RECEBERÁ:</h3>
+            <div>
+              {data?.map((obj, index) => (
+                <Result day={obj.day} value={obj.value} key={index}/>
+              ))}
+            </div>
           </div>
         </section>
       </main>

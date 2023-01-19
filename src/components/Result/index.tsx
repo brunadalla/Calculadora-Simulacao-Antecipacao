@@ -1,4 +1,5 @@
 import { ResultP } from "./styles"
+import 'animate.css';
 
 interface ResultProps {
   day: string
