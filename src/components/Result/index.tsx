@@ -1,22 +1,23 @@
+import { useContext } from "react"
+import "animate.css"
+
+import { Context } from "../../contexts"
 import { ResultP } from "./styles"
-import 'animate.css';
 
 interface ResultProps {
   day: string
   value: number
+  delay: number
 }
 
-const Result = ({ day, value }: ResultProps) => {
+const Result = ({ day, value, delay }: ResultProps) => {
+  const { defineCurrency } = useContext(Context)
 
-  function defineCurrency(total: number) {
-    return Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    }).format(total)
-  }
   return (
-    <ResultP>
-      {day === '1' ? "Amanhã: " : `Em ${day} dias: `}
+    <ResultP
+      className={`animate__animated animate__fast animate__backInRight animate__delay-${delay}s`}
+    >
+      {day === "1" ? "Tomorrow: " : `In ${day} days: `}
       <b>{defineCurrency(value)}</b>
     </ResultP>
   )

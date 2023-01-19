@@ -7,6 +7,6 @@ export const ResultP = styled.p`
   font-size: 1.1rem;
 
   b {
-    font-weight: 600;
+    font-weight: 700;
   }
 `

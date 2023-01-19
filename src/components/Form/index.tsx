@@ -19,19 +19,19 @@ const Form = () => {
   const formSchema = yup.object().shape({
     amount: yup
       .number()
-      .typeError("A number is required")
+      .typeError("A number is required!")
       .positive()
-      .min(1000, "The amount value must be equal or greater than 1000"),
+      .min(1000, "The amount value must be equal or greater than 1000!"),
     installments: yup
       .number()
-      .typeError("A number is required")
+      .typeError("A number is required!")
       .positive()
-      .min(1, "The installments value must be equal or greater than 1"),
+      .min(1, "The installments value must be equal or greater than 1!"),
     mdr: yup
       .number()
-      .typeError("A number is required")
+      .typeError("A number is required!")
       .positive()
-      .min(1, "The mdr value must be equal or greater than 1"),
+      .min(1, "The mdr value must be equal or greater than 1!"),
   })
 
   const {
@@ -45,7 +45,7 @@ const Form = () => {
   return (
     <FormContainer onSubmit={handleSubmit(calculate)}>
       <div>
-        <label htmlFor='amount'>Informe o valor da venda</label>
+        <label htmlFor='amount'> Inform the amount value * </label>
         <Input
           id='amount'
           placeholder='Ex: 1000'
@@ -61,7 +61,7 @@ const Form = () => {
       </div>
 
       <div>
-        <label htmlFor='installments'>Em quantas parcelas</label>
+        <label htmlFor='installments'> In how many installments * </label>
         <Input
           id='installments'
           placeholder='Ex: 6'
@@ -73,12 +73,12 @@ const Form = () => {
             {errors.installments.message}
           </p>
         ) : (
-          <small> Máximo de 12 parcelas </small>
+          <small> Maximum of 12 installments </small>
         )}
       </div>
 
       <div>
-        <label htmlFor=''>Informe o percentual de MDR</label>
+        <label htmlFor=''> Inform the percentage of MDR * </label>
         <Input
           id='mdr'
           placeholder='Ex: 4'
@@ -92,7 +92,7 @@ const Form = () => {
         )}
       </div>
 
-      <button type='submit'>Calculate</button>
+      <button type='submit'> Calculate </button>
     </FormContainer>
   )
 }

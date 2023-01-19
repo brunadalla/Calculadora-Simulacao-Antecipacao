@@ -137,6 +137,17 @@ export const HomeContainer = styled.div`
           align-items: flex-start;
           flex-direction: column;
           justify-content: space-between;
+
+          .default-values {
+            width: 100%;
+
+            color: var(--blue-100);
+            font-size: 1.1rem;
+
+            b {
+              font-weight: 700;
+            }
+          }
         }
       }
     }
