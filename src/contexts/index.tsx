@@ -10,7 +10,7 @@ interface ICalculateProps {
   amount: number
   installments: number
   mdr: number
-  days?: Array<number>
+  days: number
 }
 
 interface IContext {
@@ -45,7 +45,7 @@ export const Provider = ({ children }: IProviderProps) => {
     setIsLoading(true)
 
     setTimeout(() => {
-      instance({ method: "POST", data: { ...data, days: defaultDays } })
+      instance({ method: "POST", data: { ...data, days: [data.days] } })
         .then((res) => {
           const array = Object.keys(res.data).map((key, index) => {
             return { day: key, value: Object.values(res.data)[index] }

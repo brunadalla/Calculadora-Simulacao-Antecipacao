@@ -11,6 +11,7 @@ interface IFormProps {
   amount: number
   installments: number
   mdr: number
+  days: number
 }
 
 const Form = () => {
@@ -32,6 +33,11 @@ const Form = () => {
       .typeError("A number is required!")
       .positive()
       .min(1, "The mdr value must be equal or greater than 1!"),
+    days: yup
+      .number()
+      .typeError("A number is required!")
+      .positive()
+      .min(1, "The number of days must be equal or greater than 1!"),
   })
 
   const {
@@ -88,6 +94,21 @@ const Form = () => {
         {errors?.mdr && (
           <p className='animate__animated animate__shakeX'>
             {errors.mdr.message}
+          </p>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor=''> In how many days * </label>
+        <Input
+          id='days'
+          placeholder='Ex: 30'
+          error={errors.days ? true : false}
+          {...register("days")}
+        />
+        {errors?.days && (
+          <p className='animate__animated animate__shakeX'>
+            {errors.days.message}
           </p>
         )}
       </div>

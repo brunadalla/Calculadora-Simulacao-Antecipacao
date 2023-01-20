@@ -18,7 +18,7 @@ export const InputContainer = styled.input<IInputProps>`
   }
 
   ${this}::placeholder {
-    color: var(--gray-200)
+    color: var(--gray-200);
   }
 `
 
@@ -26,6 +26,7 @@ export const FormContainer = styled.form`
   height: 85%;
   width: 100%;
 
+  gap: 10px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -59,7 +60,7 @@ export const FormContainer = styled.form`
   }
 
   button {
-    height: 40px;
+    min-height: 40px;
     width: 100%;
 
     border-radius: 6px;

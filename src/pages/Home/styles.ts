@@ -24,8 +24,8 @@ export const HomeContainer = styled.div`
       max-width: 800px;
 
       height: 90%;
-      min-height: 520px;
-      max-height: 500px;
+      min-height: 560px;
+      max-height: 600px;
 
       margin: 25px;
       border: 2px solid var(--gray-200);
@@ -45,7 +45,7 @@ export const HomeContainer = styled.div`
 
     #section-form {
       height: 68%;
-      min-height: 450px;
+      min-height: 580px;
 
       display: flex;
       align-items: center;
@@ -58,15 +58,17 @@ export const HomeContainer = styled.div`
 
       #div-form {
         height: 100%;
+        min-height: 520px;
         max-height: 560px;
 
         width: 100%;
         max-width: 555px;
 
+        gap: 5%;
         display: flex;
         align-items: flex-start;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
 
         @media (min-width: 768px) {
           max-width: 360px;
@@ -84,7 +86,7 @@ export const HomeContainer = styled.div`
 
     #section-results {
       height: 32%;
-      min-height: 160px;
+      min-height: 200px;
 
       padding-top: 25px;
 
@@ -142,9 +144,10 @@ export const HomeContainer = styled.div`
             width: 100%;
 
             color: var(--blue-100);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
 
             b {
+              font-size: 1.2rem;
               font-weight: 700;
             }
           }
