@@ -28,7 +28,8 @@ O objetivo desse projeto é desenvolver uma interface que calcule os valores rec
 - design responsivo;
 - tratativa de erros.
 
-
-
-
-
+### Para fazer o clone do repositório e rodar o projeto localmente: 
+1. Clique no botão verde escrito 'Code' acima e copie a chave SSH;
+2. Abra o terminal dentro do repositório o qual você pretende salvar o projeto e execute o comando `git clone 'chave SSH'` (sem as aspas);
+3. Depois de clonar, abra o terminal na pasta do projeto e execute `yarn install` para instalar as dependências necessárias;
+4. Por fim, ainda no terminal, execute o comando `yarn start` para rodar o projeto localmente. 
