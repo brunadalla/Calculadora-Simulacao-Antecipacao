@@ -26,6 +26,7 @@ O objetivo desse projeto é desenvolver uma interface que calcule os valores rec
 ## Features:
 - conventional commits;
 - design responsivo;
+- mobile first;
 - tratativa de erros.
 
 ### Para fazer o clone do repositório e rodar o projeto localmente: 
